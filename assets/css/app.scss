@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  font-family: 'Nunito Sans', sans-serif;
+
+  &:focus{
+    outline: none;
+  }
+}
+
+
+body{
+  background-color: #F6F8FC;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.help-center{
+  padding: 45px 0;
+  h3{
+    font-size: 24px;
+    font-weight: bold;
+    color: #202842;
+    margin-bottom: 52px;
+    text-align: center;
+  }
+  .inner{
+    width: 558px;
+    form{
+      position: relative;
+      margin-bottom: 66px;
+      .icon{
+        position: absolute;
+        top: 0; left: 0;
+        width: 68px;
+        height: 63px;
+        display: grid;
+        place-items: center;
+      }
+      input{
+        background-color: #fff;
+        border-radius: 10px;
+        height: 63px;
+        width: 100%;
+        box-shadow: 0 9px 10px -4px rgba(#C9D6EF, .46);
+        font-size: 16px;
+        color: #202842;
+        padding: 0 20px 0 68px;
+        &::placeholder{
+          color: #828D92;
+        }
+      }
+    }
+
+    .accordion{
+      li{
+        &:not(:last-child){
+          margin-bottom: 25px;
+        }
+
+        label{
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          height: 51px;
+          border-bottom: 2px solid #DEE4F1;
+          font-size: 18px;
+          color: #202842;
+          cursor: pointer;
+
+          .icon{
+            height: 12px;
+            transition: 500ms all;
+          }
+        }
+        .accordion-content{
+          max-height: 0;
+          overflow: hidden;
+          font-size: 18px;
+          line-height: 1.5;
+          color: rgba(#202842, .6);
+          transition: 500ms all;
+        }
+        input{
+          display: none;
+          &:checked + label{
+            .icon{
+              transform: rotate(-180deg);
+            }
+            & + .accordion-content{
+              max-height: 50vh;
+              padding: 15px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
